@@ -36,17 +36,52 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script>
+		 function allowDrop(ev)
+  		 {
+			ev.preventDefault();
+		 }
+
+		 function drag(ev)
+		 {
+			ev.dataTransfer.setData("Text",ev.target.id);
+		 }
+
+		 function drop(ev)
+		 {	
+			ev.preventDefault();
+			var data=ev.dataTransfer.getData("Text");
+			ev.target.appendChild(document.getElementById(data));
+		 }
+		</script>
     </head>
     <body>
      <div class="wrapper">
-      <div class="title" align="center">WE II Homework #1</div>
-      <div style="padding-top: 50px;" align="center">
-       <video width="400" height="300" controls>
+      <div class="title" align="center">WE II Homework #1<span style="font-size: 11px"> by Raul Paros</span></div>
+      <div style="padding-top: 20px;" align="center">
+       <video width="320" height="240" controls>
         <source src="sibiu.mp4" type="video/mp4">
         <source src="sibiu.ogg" type="video/ogg">
         Your browser does not support the video tag.
        </video>
       </div>
+      <div class="info" align="center">This is my hometown, Sibiu, in winter time!</div>
+      <div class="info" align="center">Drag the images below into the right rectangles<br> to form a proper quote that I think you will like.</div>
+      <div align="center">
+       <table cellpadding="0">
+        <tr>
+         <td><div class="quote" style="border-right-width: 0px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+         <td><div class="quote" style="border-right-width: 0px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+         <td><div class="quote" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+        </tr>
+       </table>
+      </div>
+      <div align="center">
+       <img id="drag3" src="images/quote_3.png" draggable="true" ondragstart="drag(event)" width="105" height="85">
+       <img id="drag1" src="images/quote_1.png" draggable="true" ondragstart="drag(event)" width="105" height="85">
+       <img id="drag2" src="images/quote_2.png" draggable="true" ondragstart="drag(event)" width="105" height="85">
+      </div>
+      <div class="info" align="center">Have a nice day!</div>
      </div>
         <!-- Add your site or application content here -->
 

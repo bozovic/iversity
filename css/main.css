@@ -66,19 +66,26 @@ textarea {
    ========================================================================== */
 
 .wrapper .title{
-	background: #626262;
+	background: #2895c3;
 	color: #fff;
 	font-size: 24px;
 }
 
 .wrapper .title:hover{
-	background: #2895c3;
+	background: #626262;
 }
 
 
+.wrapper .info{
+	margin-top: 20px;
+	font-size: 13px;
+}
 
-
-
+.wrapper .quote{
+	width:105px;
+	height:85px;
+	border:1px solid #aaaaaa;
+}
 
 
 
