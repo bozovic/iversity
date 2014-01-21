@@ -65,9 +65,20 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.wrapper{
+	width: 800px;
+	margin: 0 auto;
+}
 
+.wrapper .title{
+	background: #626262;
+	color: #fff;
+	font-size: 24px;
+}
 
-
+.wrapper .title:hover{
+	background: #2895c3;
+}
 
 
 
